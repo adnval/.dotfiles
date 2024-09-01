@@ -1,0 +1,148 @@
+{
+  // CONFIGURATION
+  "position": "top",
+  "height": 35,
+  "spacing": 0, 
+
+  // MODULES
+  "modules-left": [
+    "custom/space",
+    "group/group-settings",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    "network",
+    "pulseaudio",
+    "battery",
+    "clock"
+  ],
+
+  // MODULE CONFIGURATION
+  "custom/space": {
+    "format": " ",
+    "tooltip": false
+  },
+  "group/group-settings": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/settings-icon",
+      "backlight"
+    ]
+  },
+  "custom/settings-icon": {
+    "format": "{icon}",
+    "format-icons": "󰣇",
+    "tooltip": false
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󰃚",
+      "󰃛",
+      "󰃜",
+      "󰃝",
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "reverse-scrolling": true
+  },
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "eDP-2": 3
+    }
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "separate-outputs": true
+  },
+  "tray": {
+    "show-passive-items": true
+  },
+  "network": {
+    "format": "{icon}",
+    "format-disconnected": "{icon}",
+    "format-icons": {
+      "disconnected": "󰤫",
+      "default": [
+        "󰤟",
+        "󰤢",
+        "󰤥",
+        "󰤨"
+      ]
+    },
+    "tooltip": true,
+    "tooltip-format": "{essid} {bandwidthDownBytes} {bandwidthUpBytes}",
+    "on-click": "nm-connection-editor"
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-zero": "",
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "states": {
+      "zero": 0
+    },
+    "tooltip": true,
+    "tooltip-format": "{volume}%",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "reverse-scrolling": true
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "{icon} {capacity}%",
+    "format-critical": "{icon} {capacity}%",
+    "format-icons": {
+      "charging": [
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ],
+      "critical": "󱃍",
+      "default": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ]
+    },
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "tooltip": true,
+    "tooltip-format": "{time}"
+  },
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "tooltip": true,
+    "tooltip-format": "{:%a, %b %e, %Y}"
+  }
+}
