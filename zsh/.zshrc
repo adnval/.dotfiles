@@ -88,24 +88,34 @@ alias ls='ls --color'
 alias la='ls -A'
 alias ll='ls -Al'
 alias c='clear'
+
 alias zshrc='${EDITOR} ${HOME}/.zshrc'
-alias nvimrc='${EDITOR} ${HOME}/.config/nvim/init.lua'
 alias kittyrc='${EDITOR} ${HOME}/.config/kitty/kitty.conf'
-alias hyprrc='${EDITOR} ${HOME}/.config/hypr/hyprland.conf'
+
+alias mamba='micromamba'
+
+alias gtk-theme='gsettings set org.gnome.desktop.interface gtk-theme'
+alias icon-theme='gsettings set org.gnome.desktop.interface icon-theme'
+alias dark-mode='gsettings set org.gnome.desktop.interface color-scheme prefer-dark'
+alias light-mode='gsettings set org.gnome.desktop.interface color-scheme prefer-light'
+function set-fonts() {
+  local font_name="$1"
+  local mono_font_name="$2"
+  gsettings set org.gnome.desktop.interface font-name "$font_name"
+  gsettings set org.gnome.desktop.interface document-font-name "$font_name"
+  gsettings set org.gnome.desktop.interface monospace-font-name "$mono_font_name"
+}
 
 # Initialize node version manager for javascript
 source /usr/share/nvm/init-nvm.sh
 
 # Initialize micromamba for python
-export MAMBA_EXE='/usr/bin/micromamba';
-export MAMBA_ROOT_PREFIX='/home/kevin/.micromamba';
-__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-if [ $? -eq 0 ]; then
- eval "$__mamba_setup"
-else
- alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
-fi
-unset __mamba_setup
-alias mamba='micromamba'
-
-alias evolve="/etc/evolve/gtkthememanager"
+# export MAMBA_EXE='/usr/bin/micromamba';
+# export MAMBA_ROOT_PREFIX='/home/kevin/.micromamba';
+# __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#  eval "$__mamba_setup"
+# else
+#  alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+# fi
+# unset __mamba_setup
