@@ -56,9 +56,9 @@
     "reverse-scrolling": true
   },
   "hyprland/workspaces": {
-    "persistent-workspaces": {
-      "eDP-2": 3
-    }
+    // "persistent-workspaces": {
+    //   "eDP-2": 3
+    // }
   },
   "hyprland/window": {
     "format": "{}",
