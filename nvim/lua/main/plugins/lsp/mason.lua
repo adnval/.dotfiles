@@ -26,7 +26,7 @@ return {
         "cssls",
         "html",
         "jsonls",
-        "tsserver",
+        "ts_ls",
         "intelephense",
         "pyright",
         "sqlls",
@@ -48,5 +48,5 @@ return {
         "google-java-format",
       },
     })
-  end,
+  end
 }

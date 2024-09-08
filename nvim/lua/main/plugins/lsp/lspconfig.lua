@@ -80,13 +80,7 @@ return {
 
     -- Toggle diagnostics keymap
     keymap.set("n", "<leader>xs", function()
-      if vim.g.diagnostics_active then
-        vim.g.diagnostics_active = false
-        vim.diagnostic.disable()
-      else
-        vim.g.diagnostics_active = true
-        vim.diagnostic.enable()
-      end
+      vim.diagnostic.enable(not vim.diagnostic.is_enabled())
     end, { noremap = true, silent = true, desc = "Toggle inline diagnostics" })
 
     mason_lspconfig.setup_handlers({
