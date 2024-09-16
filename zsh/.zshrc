@@ -54,17 +54,21 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Install zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::command-not-found
+zinit wait lucid light-mode for \
+  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+  blockf \
+    zsh-users/zsh-completions \
+  atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions \
+  Aloxaf/fzf-tab \
+  OMZP::git \
+  OMZP::sudo \
+  OMZP::command-not-found
 
 # Load/style completions
-autoload -U compinit && compinit
-zinit cdreplay -q
+# autoload -U compinit && compinit
+# zinit cdreplay -q
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'
 zstyle ':completion:*' menu no
