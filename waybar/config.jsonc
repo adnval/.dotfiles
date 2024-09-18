@@ -2,11 +2,9 @@
   // CONFIGURATION
   "position": "top",
   "height": 35,
-  "spacing": 0, 
-
+  "spacing": 0,
   // MODULES
   "modules-left": [
-    "custom/space",
     "group/group-settings",
     "hyprland/workspaces"
   ],
@@ -20,12 +18,7 @@
     "battery",
     "clock"
   ],
-
   // MODULE CONFIGURATION
-  "custom/space": {
-    "format": " ",
-    "tooltip": false
-  },
   "group/group-settings": {
     "orientation": "inherit",
     "drawer": {
