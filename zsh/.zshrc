@@ -123,3 +123,6 @@ source /usr/share/nvm/init-nvm.sh
 #  alias micromamba="$MAMBA_EXE"  # Fallback on help from mamba activate
 # fi
 # unset __mamba_setup
+
+# Enable zsh completions for auto-cpufreq
+eval "$(_AUTO_CPUFREQ_COMPLETE=zsh_source auto-cpufreq)"
