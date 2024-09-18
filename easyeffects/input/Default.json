@@ -1,0 +1,51 @@
+{
+  "input": {
+    "blocklist": [],
+    "echo_canceller#0": {
+      "bypass": false,
+      "filter-length": 100,
+      "input-gain": 0.0,
+      "near-end-suppression": -100,
+      "output-gain": 0.0,
+      "residual-echo-suppression": -100
+    },
+    "pitch#0": {
+      "anti-alias": false,
+      "bypass": false,
+      "input-gain": 0.0,
+      "output-gain": 0.0,
+      "overlap-length": 8,
+      "quick-seek": false,
+      "rate-difference": 0.0,
+      "seek-window": 15,
+      "semitones": -0.8,
+      "sequence-length": 40,
+      "tempo-difference": 0.0
+    },
+    "plugins_order": ["echo_canceller#0", "rnnoise#0", "pitch#0", "speex#0"],
+    "rnnoise#0": {
+      "bypass": false,
+      "enable-vad": true,
+      "input-gain": 0.0,
+      "model-name": "",
+      "output-gain": 0.0,
+      "release": 20.0,
+      "vad-thres": 50.0,
+      "wet": 0.0
+    },
+    "speex#0": {
+      "bypass": false,
+      "enable-agc": false,
+      "enable-denoise": true,
+      "enable-dereverb": true,
+      "input-gain": 0.0,
+      "noise-suppression": -70,
+      "output-gain": 0.0,
+      "vad": {
+        "enable": true,
+        "probability-continue": 90,
+        "probability-start": 95
+      }
+    }
+  }
+}
